@@ -125,7 +125,7 @@ def ls(search_key):
             regex=search_key, bucket=bucket_name))
 
     
-    return [os.path.join('s3://' + bucket_name, f) for f in ls]
+    return [('s3://' + bucket_name + '/' + f) for f in ls]
 
 def open_file(s3_path,encoding="utf-8", bytes=True):
     '''
